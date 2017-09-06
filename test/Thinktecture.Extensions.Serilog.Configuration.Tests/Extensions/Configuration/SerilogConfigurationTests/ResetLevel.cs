@@ -1,7 +1,7 @@
 using Moq;
 using Xunit;
 
-namespace Thinktecture.Extensions.Configuration.LoggingConfigurationTests
+namespace Thinktecture.Extensions.Configuration.SerilogConfigurationTests
 {
 	public class ResetLevel : TestBase
 	{
@@ -15,13 +15,13 @@ namespace Thinktecture.Extensions.Configuration.LoggingConfigurationTests
 		[Fact]
 		public void Should_delegate_the_call_to_provider()
 		{
-			ProviderMock.Setup(p => p.ResetLevel("Thinktecture", "Console"));
+			ProviderMock.Setup(p => p.ResetLevel("Thinktecture"));
 
 			var config = CreateConfig(out var collection);
 			collection.Add(ProviderMock.Object);
 
-			config.ResetLevel("Thinktecture", "Console");
-			ProviderMock.Verify(p => p.ResetLevel("Thinktecture", "Console"), Times.Once);
+			config.ResetLevel("Thinktecture");
+			ProviderMock.Verify(p => p.ResetLevel("Thinktecture"), Times.Once);
 		}
 	}
 }

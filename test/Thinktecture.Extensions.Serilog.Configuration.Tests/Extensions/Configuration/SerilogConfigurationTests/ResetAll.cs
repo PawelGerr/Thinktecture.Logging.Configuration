@@ -1,7 +1,7 @@
 using Moq;
 using Xunit;
 
-namespace Thinktecture.Extensions.Configuration.LoggingConfigurationTests
+namespace Thinktecture.Extensions.Configuration.SerilogConfigurationTests
 {
 	public class ResetAll : TestBase
 	{

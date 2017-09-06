@@ -11,12 +11,12 @@ namespace Thinktecture.Extensions.ConfigurationBuildExtensionsTests
 {
 	public class AddLoggingConfiguration
 	{
-		private readonly Mock<ILoggingConfigurationProviderCollection> _collectionMock;
+		private readonly Mock<ISerilogConfigurationProviderCollection> _collectionMock;
 		private readonly Mock<IConfigurationBuilder> _builderMock;
 
 		public AddLoggingConfiguration()
 		{
-			_collectionMock = new Mock<ILoggingConfigurationProviderCollection>(MockBehavior.Strict);
+			_collectionMock = new Mock<ISerilogConfigurationProviderCollection>(MockBehavior.Strict);
 			_builderMock = new Mock<IConfigurationBuilder>(MockBehavior.Strict);
 		}
 
@@ -45,7 +45,7 @@ namespace Thinktecture.Extensions.ConfigurationBuildExtensionsTests
 			_builderMock.Object.AddLoggingConfiguration(_collectionMock.Object);
 
 			_builderMock.Verify(b => b.Add(It.IsAny<IConfigurationSource>()), Times.Once);
-			createSource.Should().BeOfType<LoggingConfigurationSource>();
+			createSource.Should().BeOfType<SerilogConfigurationSource>();
 		}
 	}
 }
