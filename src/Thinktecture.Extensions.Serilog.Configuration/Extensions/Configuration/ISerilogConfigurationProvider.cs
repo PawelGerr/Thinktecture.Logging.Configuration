@@ -1,12 +1,11 @@
-using Serilog;
 using Serilog.Events;
 
 namespace Thinktecture.Extensions.Configuration
 {
 	/// <summary>
-	/// Reconfigures <see cref="ILogger"/> at runtime.
+	/// Changes logging configuration at runtime.
 	/// </summary>
-	public interface ILoggingConfiguration
+	public interface ISerilogConfigurationProvider
 	{
 		/// <summary>
 		/// Sets <paramref name="level"/> for provided <paramref name="category"/> if provided.

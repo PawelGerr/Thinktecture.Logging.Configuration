@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Thinktecture.Serilog.Settings.Configuration\Thinktecture.Serilog.Settings.Configuration.csproj" />
+    <ProjectReference Include="..\..\src\Thinktecture.Extensions.Serilog.Configuration\Thinktecture.Extensions.Serilog.Configuration.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,9 +1,9 @@
 namespace Thinktecture.Extensions.Configuration
 {
 	/// <summary>
-	/// A collection of <see cref="ILoggingConfigurationProvider"/>.
+	/// A collection of <see cref="ISerilogConfigurationProvider"/>.
 	/// </summary>
-	public interface ILoggingConfigurationProviderCollection
+	public interface ISerilogConfigurationProviderCollection
 	{
 		/// <summary>
 		/// Number of providers.
@@ -14,12 +14,12 @@ namespace Thinktecture.Extensions.Configuration
 		/// Adds a provider to collection.
 		/// </summary>
 		/// <param name="provider">Provider to add.</param>
-		void Add(ILoggingConfigurationProvider provider);
+		void Add(ISerilogConfigurationProvider provider);
 
 		/// <summary>
 		/// Removes a provider from collection.
 		/// </summary>
 		/// <param name="provider">Provider to remove.</param>
-		void Remove(ILoggingConfigurationProvider provider);
+		void Remove(ISerilogConfigurationProvider provider);
 	}
 }

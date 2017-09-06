@@ -8,16 +8,16 @@ namespace Thinktecture.Extensions.Configuration
 	/// <summary>
 	/// Reconfigures <see cref="ILogger"/> at runtime.
 	/// </summary>
-	public class LoggingConfiguration : ILoggingConfiguration, ILoggingConfigurationProviderCollection
+	public class SerilogConfiguration : ISerilogConfiguration, ISerilogConfigurationProviderCollection
 	{
-		private readonly List<ILoggingConfigurationProvider> _providers;
+		private readonly List<ISerilogConfigurationProvider> _providers;
 
 		/// <summary>
-		/// Initializes new instance of <see cref="LoggingConfiguration"/>.
+		/// Initializes new instance of <see cref="SerilogConfiguration"/>.
 		/// </summary>
-		public LoggingConfiguration()
+		public SerilogConfiguration()
 		{
-			_providers = new List<ILoggingConfigurationProvider>();
+			_providers = new List<ISerilogConfigurationProvider>();
 		}
 
 		/// <inheritdoc />
@@ -39,10 +39,10 @@ namespace Thinktecture.Extensions.Configuration
 		}
 
 		/// <inheritdoc />
-		int ILoggingConfigurationProviderCollection.Count => _providers.Count;
+		int ISerilogConfigurationProviderCollection.Count => _providers.Count;
 
 		/// <inheritdoc />
-		void ILoggingConfigurationProviderCollection.Add(ILoggingConfigurationProvider provider)
+		void ISerilogConfigurationProviderCollection.Add(ISerilogConfigurationProvider provider)
 		{
 			if (provider == null)
 				throw new ArgumentNullException(nameof(provider));
@@ -51,7 +51,7 @@ namespace Thinktecture.Extensions.Configuration
 		}
 
 		/// <inheritdoc />
-		void ILoggingConfigurationProviderCollection.Remove(ILoggingConfigurationProvider provider)
+		void ISerilogConfigurationProviderCollection.Remove(ISerilogConfigurationProvider provider)
 		{
 			if (provider == null)
 				throw new ArgumentNullException(nameof(provider));

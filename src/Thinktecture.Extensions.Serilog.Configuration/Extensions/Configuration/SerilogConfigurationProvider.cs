@@ -9,15 +9,15 @@ namespace Thinktecture.Extensions.Configuration
 	/// <summary>
 	/// Changes logging configuration at runtime.
 	/// </summary>
-	public class LoggingConfigurationProvider : ConfigurationProvider, ILoggingConfigurationProvider
+	public class SerilogConfigurationProvider : ConfigurationProvider, ISerilogConfigurationProvider
 	{
 		private readonly IEnumerable<string> _parentPath;
 
 		/// <summary>
-		/// Initializes new instance of <see cref="LoggingConfigurationProvider"/>.
+		/// Initializes new instance of <see cref="SerilogConfigurationProvider"/>.
 		/// </summary>
 		/// <param name="parentPath">Path to logging section.</param>
-		public LoggingConfigurationProvider(IEnumerable<string> parentPath)
+		public SerilogConfigurationProvider(IEnumerable<string> parentPath)
 		{
 			_parentPath = parentPath ?? throw new ArgumentNullException(nameof(parentPath));
 

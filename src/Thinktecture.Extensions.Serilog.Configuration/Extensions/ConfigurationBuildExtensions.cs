@@ -17,14 +17,14 @@ namespace Thinktecture
 		/// <param name="configuration">Logging configuration to add to the <paramref name="builder"/>.</param>
 		/// <param name="parentPath">Path the the logging section.</param>
 		/// <returns>An instance of <see cref="IConfigurationBuilder"/>.</returns>
-		public static IConfigurationBuilder AddLoggingConfiguration(this IConfigurationBuilder builder, ILoggingConfigurationProviderCollection configuration, params string[] parentPath)
+		public static IConfigurationBuilder AddLoggingConfiguration(this IConfigurationBuilder builder, ISerilogConfigurationProviderCollection configuration, params string[] parentPath)
 		{
 			if (builder == null)
 				throw new ArgumentNullException(nameof(builder));
 			if (configuration == null)
 				throw new ArgumentNullException(nameof(configuration));
 
-			return builder.Add(new LoggingConfigurationSource(configuration, parentPath));
+			return builder.Add(new SerilogConfigurationSource(configuration, parentPath));
 		}
 	}
 }

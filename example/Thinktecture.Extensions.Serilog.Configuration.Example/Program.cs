@@ -7,15 +7,15 @@ using Serilog;
 using Serilog.Events;
 using Thinktecture.Extensions.Configuration;
 
-namespace Thinktecture.Serilog.Settings.Configuration.Example
+namespace Thinktecture.Extensions.Serilog.Configuration.Example
 {
 	public class Program
 	{
 		public static void Main(string[] args)
 		{
-			// You can register this instance (i.e. ILoggingConfiguration) with DI
+			// You can register this instance (i.e. ISerilogConfiguration) with DI
 			// and, for example, control the logging level via GUI or Web API
-			var loggingConfig = new LoggingConfiguration();
+			var loggingConfig = new SerilogConfiguration();
 
 			var config = new ConfigurationBuilder()
 				// Adding JsonFile to provide defaults.
@@ -28,7 +28,7 @@ namespace Thinktecture.Serilog.Settings.Configuration.Example
 				.AddLoggingConfiguration(loggingConfig, "My", "Serilog")
 				.Build();
 
-			var loggerConfiguration = new global::Serilog.LoggerConfiguration()
+			var loggerConfiguration = new LoggerConfiguration()
 				.ReadFrom.ConfigurationSection(config.GetSection("My:Serilog"))
 				.WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {SourceContext}: {Message:lj}{NewLine}{Exception}");
 
@@ -43,21 +43,21 @@ namespace Thinktecture.Serilog.Settings.Configuration.Example
 			}
 		}
 
-		private static void GenerateLogs(ILogger logger, ILoggingConfiguration loggingConfig)
+		private static void GenerateLogs(ILogger logger, ISerilogConfiguration serilogConfig)
 		{
 			Print("Default settings");
 			GenerateLogs(logger);
 
 			Print($"Changing log level of category=all to {LogEventLevel.Error}");
-			loggingConfig.SetLevel(LogEventLevel.Error);
+			serilogConfig.SetLevel(LogEventLevel.Error);
 			GenerateLogs(logger);
 
 			Print($"Changing log level of category=Thinktecture to {LogEventLevel.Fatal}");
-			loggingConfig.SetLevel(LogEventLevel.Fatal, "Thinktecture");
+			serilogConfig.SetLevel(LogEventLevel.Fatal, "Thinktecture");
 			GenerateLogs(logger);
 
 			Print("Resetting all settings, returning to defaults");
-			loggingConfig.ResetAll();
+			serilogConfig.ResetAll();
 			GenerateLogs(logger);
 		}
 
