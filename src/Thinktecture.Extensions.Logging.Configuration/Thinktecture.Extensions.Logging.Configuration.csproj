@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Description>Allows to configure log level of an ILogger at runtime.</Description>
+    <Description>Allows to configure log level of an Microsoft.Extensions.Logging.ILogger at runtime.</Description>
     <Copyright>(c) 2017, Pawel Gerr. All rights reserved.</Copyright>
     <VersionPrefix>0.0.1</VersionPrefix>
     <Authors>Pawel Gerr</Authors>
-    <TargetFrameworks>netstandard1.0;net45;net46</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageTags>logging;configuration;</PackageTags>
     <PackageIconUrl>http://thinktecture.com/images/Logo_T_Nontransparent.png</PackageIconUrl>
@@ -17,12 +17,8 @@
     <LangVersion>7.1</LangVersion>
     <CodeAnalysisRuleSet>..\..\Visual Studio.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.0.0" />
   </ItemGroup>
 </Project>

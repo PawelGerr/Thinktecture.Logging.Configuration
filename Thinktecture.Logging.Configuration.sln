@@ -13,6 +13,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{EC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FC041D8C-9C5C-4664-8443-6F51C446742A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{83ACE7F8-BC91-468A-9E79-CD111FE1FC57}"
+	ProjectSection(SolutionItems) = preProject
+		LICENCE.md = LICENCE.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thinktecture.Extensions.Logging.Configuration.Example", "example\Thinktecture.Extensions.Logging.Configuration.Example\Thinktecture.Extensions.Logging.Configuration.Example.csproj", "{0857DEF7-7CC1-4CAC-9105-4F88D9C4CC61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thinktecture.Extensions.Logging.Configuration.Tests", "test\Thinktecture.Extensions.Logging.Configuration.Tests\Thinktecture.Extensions.Logging.Configuration.Tests.csproj", "{5B467799-E14B-496F-900D-236631A7978C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +37,14 @@ Global
 		{902268EB-DE56-4A73-9B00-D216955274B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{902268EB-DE56-4A73-9B00-D216955274B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{902268EB-DE56-4A73-9B00-D216955274B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0857DEF7-7CC1-4CAC-9105-4F88D9C4CC61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0857DEF7-7CC1-4CAC-9105-4F88D9C4CC61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0857DEF7-7CC1-4CAC-9105-4F88D9C4CC61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0857DEF7-7CC1-4CAC-9105-4F88D9C4CC61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B467799-E14B-496F-900D-236631A7978C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B467799-E14B-496F-900D-236631A7978C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B467799-E14B-496F-900D-236631A7978C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B467799-E14B-496F-900D-236631A7978C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -34,6 +52,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{0330CEB0-C819-4750-903A-9BF503A4B8CB} = {7760FB9C-2BB6-4F16-9254-497804E28BEA}
 		{902268EB-DE56-4A73-9B00-D216955274B9} = {7760FB9C-2BB6-4F16-9254-497804E28BEA}
+		{0857DEF7-7CC1-4CAC-9105-4F88D9C4CC61} = {ECB38C6A-34B3-4D67-A144-396151CA93F7}
+		{5B467799-E14B-496F-900D-236631A7978C} = {FC041D8C-9C5C-4664-8443-6F51C446742A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DE6AF32F-97AE-4A2C-B54E-BBE2F09623E5}
