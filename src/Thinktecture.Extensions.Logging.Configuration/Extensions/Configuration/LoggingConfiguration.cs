@@ -19,30 +19,19 @@ namespace Thinktecture.Extensions.Configuration
 			_providers = new List<ILoggingConfigurationProvider>();
 		}
 
-		/// <summary>
-		/// Sets <paramref name="level"/> for provided <paramref name="category"/> and <paramref name="provider"/> if provided.
-		/// </summary>
-		/// <param name="level">Log level.</param>
-		/// <param name="category">Logging category.</param>
-		/// <param name="provider">Logging provider.</param>
+		/// <inheritdoc />
 		public void SetLevel(LogLevel level, string category = null, string provider = null)
 		{
 			_providers.ForEach(p => p.SetLevel(level, category, provider));
 		}
 
-		/// <summary>
-		/// Resets the log level for provided <paramref name="category"/> and <paramref name="provider"/>.
-		/// </summary>
-		/// <param name="category">Logging category.</param>
-		/// <param name="provider">Logging provider.</param>
+		/// <inheritdoc />
 		public void ResetLevel(string category = null, string provider = null)
 		{
 			_providers.ForEach(p => p.ResetLevel(category, provider));
 		}
 
-		/// <summary>
-		/// Removed all previously made settings.
-		/// </summary>
+		/// <inheritdoc />
 		public void ResetAll()
 		{
 			_providers.ForEach(p => p.ResetAll());

@@ -25,12 +25,7 @@ namespace Thinktecture.Extensions.Configuration
 				throw new ArgumentException("The segments of the parent path must be null nor empty.");
 		}
 
-		/// <summary>
-		/// Sets <paramref name="level"/> for provided <paramref name="category"/> and <paramref name="provider"/> if provided.
-		/// </summary>
-		/// <param name="level">Log level.</param>
-		/// <param name="category">Logging category.</param>
-		/// <param name="provider">Logging provider.</param>
+		/// <inheritdoc />
 		public void SetLevel(LogLevel level, string category = null, string provider = null)
 		{
 			var path = BuildLogLevelPath(category, provider);
@@ -38,11 +33,7 @@ namespace Thinktecture.Extensions.Configuration
 			OnReload();
 		}
 
-		/// <summary>
-		/// Resets the log level for provided <paramref name="category"/> and <paramref name="provider"/>.
-		/// </summary>
-		/// <param name="category">Logging category.</param>
-		/// <param name="provider">Logging provider.</param>
+		/// <inheritdoc />
 		public void ResetLevel(string category = null, string provider = null)
 		{
 			var path = BuildLogLevelPath(category, provider);
@@ -50,9 +41,7 @@ namespace Thinktecture.Extensions.Configuration
 			OnReload();
 		}
 
-		/// <summary>
-		/// Removed all previously made settings.
-		/// </summary>
+		/// <inheritdoc />
 		public void ResetAll()
 		{
 			Data.Clear();
