@@ -28,7 +28,7 @@ namespace Thinktecture.Extensions.Logging.Configuration.Example
 				.AddLogging(builder =>
 				{
 					// Nothing new, provide IConfiguration the usual way
-					// (https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging#how-to-add-providers)
+					// (https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging#log-filtering)
 					builder.AddConfiguration(config.GetSection("My:Logging"));
 					builder.AddConsole();
 				})
