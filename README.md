@@ -26,7 +26,7 @@ var loggingConfig = new LoggingConfiguration();
 ```
 
 Add the logging configuration to your `IConfigurationBuilder` using extension method `AddLoggingConfiguration`.
-This call must be after other configuration providers that change the log level, e.g. as the last one.
+This call must be placed after other configuration providers that change the log level, e.g. as the last one.
 
 ```
 var config = new ConfigurationBuilder()
@@ -45,7 +45,7 @@ var config = new ConfigurationBuilder()
 }
 ```
 
-Use the `IConfiguration` to configure your logging [the usual way](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging#log-filtering).
+Use the `IConfiguration` to configure the logger [the usual way](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging#log-filtering).
 
 ```
 var serviceProvider = new ServiceCollection()
@@ -58,7 +58,7 @@ var serviceProvider = new ServiceCollection()
 	.BuildServiceProvider();
 ```
 
-Use `ILoggingConfiguration` to set and reset log level.
+Use `ILoggingConfiguration` to set and reset the log level.
 
 ```
 ILoggingConfiguration loggingConfig = ...;
@@ -91,10 +91,10 @@ var loggingConfig = new SerilogConfiguration();
 ```
 
 Add the logging configuration to your `IConfigurationBuilder` using extension method `AddLoggingConfiguration`.
-This call must be after other configuration providers that change the log level, e.g. as the last one.
+This call must be placed after other configuration providers that change the log level, e.g. as the last one.
 
 > **Limitation**: Serilog creates *a watcher* (i.e. a `LoggingLevelSwitch`) for configuration keys only that are present when building the logger.
-> For example: if there is no configuration for `MinimumLevel:Override:Thinktecture` when CreateLogger() is called then you won't be able to change the log level for this category.
+> For example: if there is no configuration for `MinimumLevel:Override:Thinktecture` when CreateLogger() is called then you won't be able to change the log level for this category during runtime.
 
 ```
 var config = new ConfigurationBuilder()
