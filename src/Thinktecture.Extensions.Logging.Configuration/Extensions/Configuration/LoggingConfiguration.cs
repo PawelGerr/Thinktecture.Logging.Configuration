@@ -22,19 +22,28 @@ namespace Thinktecture.Extensions.Configuration
 		/// <inheritdoc />
 		public void SetLevel(LogLevel level, string category = null, string provider = null)
 		{
-			_providers.ForEach(p => p.SetLevel(level, category, provider));
+			foreach (var p in _providers)
+			{
+				p.SetLevel(level, category, provider);
+			}
 		}
 
 		/// <inheritdoc />
 		public void ResetLevel(string category = null, string provider = null)
 		{
-			_providers.ForEach(p => p.ResetLevel(category, provider));
+			foreach (var p in _providers)
+			{
+				p.ResetLevel(category, provider);
+			}
 		}
 
 		/// <inheritdoc />
 		public void ResetAll()
 		{
-			_providers.ForEach(p => p.ResetAll());
+			foreach (var p in _providers)
+			{
+				p.ResetAll();
+			}
 		}
 
 		/// <inheritdoc />
