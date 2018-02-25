@@ -1,8 +1,6 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/ijstyxit8tn7baex?svg=true)](https://ci.appveyor.com/project/PawelGerr/thinktecture-logging-configuration)
-
-[![Thinktecture.Extensions.Logging.Configuration](https://img.shields.io/nuget/v/Thinktecture.Extensions.Logging.Configuration.svg?label=Thinktecture.Extensions.Logging.Configuration)](https://www.nuget.org/packages/Thinktecture.Extensions.Logging.Configuration/)
-
-[![Thinktecture.Extensions.Serilog.Configuration](https://img.shields.io/nuget/v/Thinktecture.Extensions.Serilog.Configuration.svg?label=Thinktecture.Extensions.Serilog.Configuration)](https://www.nuget.org/packages/Thinktecture.Extensions.Serilog.Configuration/)
+[![Build status](https://ci.appveyor.com/api/projects/status/ijstyxit8tn7baex?svg=true)](https://ci.appveyor.com/project/PawelGerr/thinktecture-logging-configuration)  
+[![Thinktecture.Extensions.Logging.Configuration](https://img.shields.io/nuget/v/Thinktecture.Extensions.Logging.Configuration.svg?label=Thinktecture.Extensions.Logging.Configuration&maxAge=3600)](https://www.nuget.org/packages/Thinktecture.Extensions.Logging.Configuration/)  
+[![Thinktecture.Extensions.Serilog.Configuration](https://img.shields.io/nuget/v/Thinktecture.Extensions.Serilog.Configuration.svg?label=Thinktecture.Extensions.Serilog.Configuration&maxAge=3600)](https://www.nuget.org/packages/Thinktecture.Extensions.Serilog.Configuration/)
 
 Allows to change the log level at runtime.
 It is usefull for pinpointing issues in production environments by changing to lower log level like `Debug` temporarily (for example via GUI or Web API) without restarting the application.
