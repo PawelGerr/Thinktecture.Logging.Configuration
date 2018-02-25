@@ -1,5 +1,9 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/ijstyxit8tn7baex?svg=true)](https://ci.appveyor.com/project/PawelGerr/thinktecture-logging-configuration)
 
+[![Thinktecture.Extensions.Logging.Configuration](https://img.shields.io/nuget/v/Thinktecture.Extensions.Logging.Configuration.svg?label=Thinktecture.Extensions.Logging.Configuration)](https://www.nuget.org/packages/Thinktecture.Extensions.Logging.Configuration/)
+
+[![Thinktecture.Extensions.Serilog.Configuration](https://img.shields.io/nuget/v/Thinktecture.Extensions.Serilog.Configuration.svg?label=Thinktecture.Extensions.Serilog.Configuration)](https://www.nuget.org/packages/Thinktecture.Extensions.Serilog.Configuration/)
+
 Allows to change the log level at runtime.
 It is usefull for pinpointing issues in production environments by changing to lower log level like `Debug` temporarily (for example via GUI or Web API) without restarting the application.
 
@@ -15,7 +19,7 @@ The steps for setting up the configuration for `ILogger` from Microsoft and [Ser
 
 [Example](https://github.com/PawelGerr/Thinktecture.Logging.Configuration/blob/master/example/Thinktecture.Extensions.Logging.Configuration.Example/Program.cs)
 
-Install Nuget-Package: [Thinktecture.Extensions.Logging.Configuration.Example](https://www.nuget.org/packages/Thinktecture.Extensions.Logging.Configuration/)
+`Install-Package Thinktecture.Extensions.Logging.Configuration`
 
 Create an instance of `ILoggingConfiguration`
 
@@ -80,7 +84,7 @@ loggingConfig.ResetAll();
 
 [Example](https://github.com/PawelGerr/Thinktecture.Logging.Configuration/blob/master/example/Thinktecture.Extensions.Serilog.Configuration.Example/Program.cs)
 
-Install Nuget-Package: [Thinktecture.Extensions.Serilog.Configuration.Example](https://www.nuget.org/packages/Thinktecture.Extensions.Serilog.Configuration/)
+`Install-Package Thinktecture.Extensions.Serilog.Configuration`
 
 Create an instance of `ISerilogConfiguration`
 
