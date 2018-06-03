@@ -10,21 +10,21 @@ namespace Thinktecture.Extensions.Configuration.SerilogConfigurationProviderTest
 		public void Should_throw_if_pathcollection_is_null()
 		{
 			Action action = () => new SerilogConfigurationProvider(null);
-			action.ShouldThrow<ArgumentNullException>();
+			action.Should().Throw<ArgumentNullException>();
 		}
 
 		[Fact]
 		public void Should_throw_if_pathcollection_contains_null()
 		{
 			Action action = () => new SerilogConfigurationProvider(new string[] { null });
-			action.ShouldThrow<ArgumentException>();
+			action.Should().Throw<ArgumentException>();
 		}
 
 		[Fact]
 		public void Should_throw_if_pathcollection_contains_segments_with_whitespaces_only()
 		{
 			Action action = () => new SerilogConfigurationProvider(new[] { " " });
-			action.ShouldThrow<ArgumentException>();
+			action.Should().Throw<ArgumentException>();
 		}
 
 		[Fact]

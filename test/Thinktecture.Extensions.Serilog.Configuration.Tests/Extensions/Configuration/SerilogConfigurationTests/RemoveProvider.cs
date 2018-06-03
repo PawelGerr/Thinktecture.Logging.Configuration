@@ -13,7 +13,7 @@ namespace Thinktecture.Extensions.Configuration.SerilogConfigurationTests
 			CreateConfig(out var collection);
 			Action action = () => collection.Remove(null);
 
-			action.ShouldThrow<ArgumentNullException>();
+			action.Should().Throw<ArgumentNullException>();
 		}
 
 		[Fact]

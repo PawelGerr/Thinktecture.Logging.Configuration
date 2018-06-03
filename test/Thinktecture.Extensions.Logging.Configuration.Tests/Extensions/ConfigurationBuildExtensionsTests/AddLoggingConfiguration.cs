@@ -24,14 +24,14 @@ namespace Thinktecture.Extensions.ConfigurationBuildExtensionsTests
 		public void Should_throw_if_builder_is_null()
 		{
 			Action action = () => ((IConfigurationBuilder)null).AddLoggingConfiguration(_collectionMock.Object);
-			action.ShouldThrow<ArgumentNullException>();
+			action.Should().Throw<ArgumentNullException>();
 		}
 
 		[Fact]
 		public void Should_throw_if_collection_is_null()
 		{
 			Action action = () => _builderMock.Object.AddLoggingConfiguration(null);
-			action.ShouldThrow<ArgumentNullException>();
+			action.Should().Throw<ArgumentNullException>();
 		}
 
 		[Fact]

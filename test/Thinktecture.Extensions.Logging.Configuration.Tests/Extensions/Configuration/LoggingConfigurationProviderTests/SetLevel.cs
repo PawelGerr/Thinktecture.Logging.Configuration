@@ -54,7 +54,7 @@ namespace Thinktecture.Extensions.Configuration.LoggingConfigurationProviderTest
 			var provider = CreateProvider();
 			Action action = () => provider.SetLevel((LogLevel)42);
 
-			action.ShouldThrow<ArgumentException>();
+			action.Should().Throw<ArgumentException>();
 		}
 
 		[Fact]

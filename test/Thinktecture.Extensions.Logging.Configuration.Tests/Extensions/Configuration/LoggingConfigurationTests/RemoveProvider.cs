@@ -13,7 +13,7 @@ namespace Thinktecture.Extensions.Configuration.LoggingConfigurationTests
 			CreateConfig(out var collection);
 			Action action = () => collection.Remove(null);
 
-			action.ShouldThrow<ArgumentNullException>();
+			action.Should().Throw<ArgumentNullException>();
 		}
 
 		[Fact]

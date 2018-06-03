@@ -18,28 +18,28 @@ namespace Thinktecture.Extensions.Configuration.SerilogConfigurationSourceTests
 		public void Should_throw_if_loggingconfiguration_is_null()
 		{
 			Action action = () => new SerilogConfigurationSource(null);
-			action.ShouldThrow<ArgumentNullException>();
+			action.Should().Throw<ArgumentNullException>();
 		}
 
 		[Fact]
 		public void Should_throw_if_parentpath_is_null()
 		{
 			Action action = () => new SerilogConfigurationSource(_collectionMock.Object, null);
-			action.ShouldThrow<ArgumentNullException>();
+			action.Should().Throw<ArgumentNullException>();
 		}
 
 		[Fact]
 		public void Should_throw_if_parentpath_contains_null()
 		{
 			Action action = () => new SerilogConfigurationSource(_collectionMock.Object, new string[] { null });
-			action.ShouldThrow<ArgumentException>();
+			action.Should().Throw<ArgumentException>();
 		}
 
 		[Fact]
 		public void Should_throw_if_parentpath_contains_segments_with_whitespaces_only()
 		{
 			Action action = () => new SerilogConfigurationSource(_collectionMock.Object, " ");
-			action.ShouldThrow<ArgumentException>();
+			action.Should().Throw<ArgumentException>();
 		}
 	}
 }

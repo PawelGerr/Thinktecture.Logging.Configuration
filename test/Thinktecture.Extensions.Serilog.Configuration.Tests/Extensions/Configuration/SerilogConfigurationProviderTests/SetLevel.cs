@@ -60,7 +60,7 @@ namespace Thinktecture.Extensions.Configuration.SerilogConfigurationProviderTest
 			var provider = CreateProvider();
 			Action action = () => provider.SetLevel((LogEventLevel)42);
 
-			action.ShouldThrow<ArgumentException>();
+			action.Should().Throw<ArgumentException>();
 		}
 
 		[Fact]
