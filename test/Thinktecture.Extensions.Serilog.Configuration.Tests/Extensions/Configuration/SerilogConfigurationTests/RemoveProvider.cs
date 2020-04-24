@@ -26,18 +26,18 @@ namespace Thinktecture.Extensions.Configuration.SerilogConfigurationTests
 		[Fact]
 		public void Should_remove_provider_from_internal_collection()
 		{
-			ProviderMock.Setup(p => p.ResetAll());
+			ProviderMock.Setup(p => p.ResetLevel(null));
 
 			var config = CreateConfig(out var collection);
 			collection.Add(ProviderMock.Object);
 
-			config.ResetAll();
-			ProviderMock.Verify(p => p.ResetAll(), Times.Once);
+			config.ResetLevel();
+			ProviderMock.Verify(p => p.ResetLevel(null), Times.Once);
 
 			collection.Remove(ProviderMock.Object);
 
-			config.ResetAll();
-			ProviderMock.Verify(p => p.ResetAll(), Times.Once);
+			config.ResetLevel();
+			ProviderMock.Verify(p => p.ResetLevel(null), Times.Once);
 		}
 	}
 }

@@ -38,15 +38,6 @@ namespace Thinktecture.Extensions.Configuration
 		}
 
 		/// <inheritdoc />
-		public void ResetAll()
-		{
-			foreach (var p in _providers)
-			{
-				p.ResetAll();
-			}
-		}
-
-		/// <inheritdoc />
 		int ILoggingConfigurationProviderCollection.Count => _providers.Count;
 
 		/// <inheritdoc />

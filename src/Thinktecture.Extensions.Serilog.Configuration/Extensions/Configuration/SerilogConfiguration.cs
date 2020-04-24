@@ -39,15 +39,6 @@ namespace Thinktecture.Extensions.Configuration
 		}
 
 		/// <inheritdoc />
-		public void ResetAll()
-		{
-			foreach (var p in _providers)
-			{
-				p.ResetAll();
-			}
-		}
-
-		/// <inheritdoc />
 		int ISerilogConfigurationProviderCollection.Count => _providers.Count;
 
 		/// <inheritdoc />

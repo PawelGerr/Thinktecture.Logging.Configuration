@@ -64,7 +64,7 @@ namespace Thinktecture.Extensions.Logging.Configuration.Example
 			GenerateLogs(logger);
 
 			Print("Resetting all settings, returning to defaults");
-			loggingConfig.ResetAll();
+			loggingConfig.ResetLevel();
 			GenerateLogs(logger);
 		}
 

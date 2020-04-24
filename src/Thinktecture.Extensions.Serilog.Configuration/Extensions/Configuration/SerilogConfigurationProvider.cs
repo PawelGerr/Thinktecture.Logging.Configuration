@@ -40,19 +40,19 @@ namespace Thinktecture.Extensions.Configuration
 		/// <inheritdoc />
 		public void ResetLevel(string? category = null)
 		{
-			var path = BuildLogLevelPath(category, out var additionalPath);
-			Data.Remove(path);
+         if (!String.IsNullOrWhiteSpace(category))
+         {
+            var path = BuildLogLevelPath(category, out var additionalPath);
+            Data.Remove(path);
 
-			if (!String.IsNullOrWhiteSpace(additionalPath))
-				Data.Remove(additionalPath);
+            if (!String.IsNullOrWhiteSpace(additionalPath))
+               Data.Remove(additionalPath);
+         }
+         else
+         {
+            Data.Clear();
+         }
 
-			OnReload();
-		}
-
-		/// <inheritdoc />
-		public void ResetAll()
-		{
-			Data.Clear();
 			OnReload();
 		}
 

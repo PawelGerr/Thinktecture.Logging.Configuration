@@ -42,7 +42,7 @@ namespace Thinktecture.Extensions.Configuration.SerilogConfigurationProviderTest
 			var provider = CreateProvider();
 			provider.Set("MinimumLevel:Override:Thinktecture", "Debug");
 
-			provider.ResetLevel();
+			provider.ResetLevel("OtherCategory");
 			provider.TryGet("MinimumLevel:Override:Thinktecture", out var level).Should().BeTrue();
 		}
 

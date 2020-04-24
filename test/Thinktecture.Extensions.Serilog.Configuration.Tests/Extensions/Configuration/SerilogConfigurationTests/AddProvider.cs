@@ -19,17 +19,17 @@ namespace Thinktecture.Extensions.Configuration.SerilogConfigurationTests
 		[Fact]
 		public void Should_add_provider_to_internal_collection()
 		{
-			ProviderMock.Setup(p => p.ResetAll());
+			ProviderMock.Setup(p => p.ResetLevel(null));
 
 			var config = CreateConfig(out var collection);
 
-			config.ResetAll();
-			ProviderMock.Verify(p => p.ResetAll(), Times.Never);
+			config.ResetLevel();
+			ProviderMock.Verify(p => p.ResetLevel(null), Times.Never);
 
 			collection.Add(ProviderMock.Object);
 
-			config.ResetAll();
-			ProviderMock.Verify(p => p.ResetAll(), Times.Once);
+			config.ResetLevel();
+			ProviderMock.Verify(p => p.ResetLevel(null), Times.Once);
 		}
 	}
 }

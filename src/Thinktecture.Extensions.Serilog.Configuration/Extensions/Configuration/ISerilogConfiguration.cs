@@ -20,10 +20,5 @@ namespace Thinktecture.Extensions.Configuration
 		/// </summary>
 		/// <param name="category">Logging category.</param>
 		void ResetLevel(string? category = null);
-
-		/// <summary>
-		/// Removed all previously made settings.
-		/// </summary>
-		void ResetAll();
 	}
 }

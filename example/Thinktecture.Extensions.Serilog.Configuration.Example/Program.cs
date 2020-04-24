@@ -47,7 +47,7 @@ namespace Thinktecture.Extensions.Serilog.Configuration.Example
 			Print("Default settings");
 			GenerateLogs(logger);
 
-			Print($"Changing log level of category=all to {LogEventLevel.Error}");
+			Print($"Changing default og level to {LogEventLevel.Error}");
 			serilogConfig.SetLevel(LogEventLevel.Error);
 			GenerateLogs(logger);
 
@@ -56,7 +56,7 @@ namespace Thinktecture.Extensions.Serilog.Configuration.Example
 			GenerateLogs(logger);
 
 			Print("Resetting all settings, returning to defaults");
-			serilogConfig.ResetAll();
+			serilogConfig.ResetLevel();
 			GenerateLogs(logger);
 		}
 

@@ -21,10 +21,5 @@ namespace Thinktecture.Extensions.Configuration
 		/// <param name="category">Logging category.</param>
 		/// <param name="provider">Logging provider.</param>
 		void ResetLevel(string? category = null, string? provider = null);
-
-		/// <summary>
-		/// Removed all previously made settings.
-		/// </summary>
-		void ResetAll();
 	}
 }

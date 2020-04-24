@@ -36,15 +36,16 @@ namespace Thinktecture.Extensions.Configuration
 		/// <inheritdoc />
 		public void ResetLevel(string? category = null, string? provider = null)
 		{
-			var path = BuildLogLevelPath(category, provider);
-			Data.Remove(path);
-			OnReload();
-		}
+         if (!String.IsNullOrEmpty(category) || !String.IsNullOrWhiteSpace(provider))
+         {
+            var path = BuildLogLevelPath(category, provider);
+            Data.Remove(path);
+         }
+         else
+         {
+            Data.Clear();
+         }
 
-		/// <inheritdoc />
-		public void ResetAll()
-		{
-			Data.Clear();
 			OnReload();
 		}
 
