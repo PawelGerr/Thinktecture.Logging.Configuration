@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thinktecture.Extensions.Logging.Configuration", "src\Thinktecture.Extensions.Logging.Configuration\Thinktecture.Extensions.Logging.Configuration.csproj", "{0330CEB0-C819-4750-903A-9BF503A4B8CB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7760FB9C-2BB6-4F16-9254-497804E28BEA}"
+ProjectSection(SolutionItems) = preProject
+	src\Directory.Build.props = src\Directory.Build.props
+EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{ECB38C6A-34B3-4D67-A144-396151CA93F7}"
 ProjectSection(SolutionItems) = preProject
