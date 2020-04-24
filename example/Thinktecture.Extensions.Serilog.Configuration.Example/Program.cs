@@ -28,7 +28,7 @@ namespace Thinktecture.Extensions.Serilog.Configuration.Example
 				.Build();
 
 			var loggerConfiguration = new LoggerConfiguration()
-				.ReadFrom.ConfigurationSection(config.GetSection("My:Serilog"))
+				.ReadFrom.Configuration(config, "My:Serilog")
 				.WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {SourceContext}: {Message:lj}{NewLine}{Exception}");
 
 			var logger = loggerConfiguration.CreateLogger().ForContext<Program>();
