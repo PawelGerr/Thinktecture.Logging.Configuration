@@ -58,10 +58,7 @@ namespace Thinktecture.Extensions.Configuration
 
 		private static string GetLevelName(LogEventLevel level)
 		{
-			if (!Enum.GetValues(typeof(LogEventLevel)).Cast<LogEventLevel>().Contains(level))
-				throw new ArgumentException($"Provided value is not a valid {nameof(LogEventLevel)}: {level}", nameof(level));
-
-			return Enum.GetName(typeof(LogEventLevel), level);
+			return Enum.GetName(typeof(LogEventLevel), level) ?? throw new ArgumentException($"Provided value is not a valid {nameof(LogEventLevel)}: {level}", nameof(level));
 		}
 
 		private string BuildLogLevelPath(string? category, out string? additionalPath)
