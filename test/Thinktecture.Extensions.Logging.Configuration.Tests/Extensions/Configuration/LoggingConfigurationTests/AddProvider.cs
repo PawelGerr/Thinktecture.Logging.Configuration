@@ -11,7 +11,7 @@ namespace Thinktecture.Extensions.Configuration.LoggingConfigurationTests
 		public void Should_throw_if_provider_is_null()
 		{
 			CreateConfig(out var collection);
-			Action action = () => collection.Add(null);
+			Action action = () => collection.Add(null!);
 
 			action.Should().Throw<ArgumentNullException>();
 		}

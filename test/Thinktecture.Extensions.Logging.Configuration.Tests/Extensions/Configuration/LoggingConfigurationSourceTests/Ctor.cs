@@ -9,21 +9,21 @@ namespace Thinktecture.Extensions.Configuration.LoggingConfigurationSourceTests
 		[Fact]
 		public void Should_throw_if_loggingconfiguration_is_null()
 		{
-			Action action = () => new LoggingConfigurationSource(null);
+			Action action = () => new LoggingConfigurationSource(null!);
 			action.Should().Throw<ArgumentNullException>();
 		}
 
 		[Fact]
 		public void Should_throw_if_parentpath_is_null()
 		{
-			Action action = () => new LoggingConfigurationSource(new LoggingConfiguration(), null);
+			Action action = () => new LoggingConfigurationSource(new LoggingConfiguration(), null!);
 			action.Should().Throw<ArgumentNullException>();
 		}
 
 		[Fact]
 		public void Should_throw_if_parentpath_contains_null()
 		{
-			Action action = () => new LoggingConfigurationSource(new LoggingConfiguration(), new string[] { null });
+			Action action = () => new LoggingConfigurationSource(new LoggingConfiguration(), new string[] { null! });
 			action.Should().Throw<ArgumentException>();
 		}
 

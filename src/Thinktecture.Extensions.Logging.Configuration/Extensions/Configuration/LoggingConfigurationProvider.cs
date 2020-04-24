@@ -26,7 +26,7 @@ namespace Thinktecture.Extensions.Configuration
 		}
 
 		/// <inheritdoc />
-		public void SetLevel(LogLevel level, string category = null, string provider = null)
+		public void SetLevel(LogLevel level, string? category = null, string? provider = null)
 		{
 			var path = BuildLogLevelPath(category, provider);
 			Data[path] = GetLevelName(level);
@@ -34,7 +34,7 @@ namespace Thinktecture.Extensions.Configuration
 		}
 
 		/// <inheritdoc />
-		public void ResetLevel(string category = null, string provider = null)
+		public void ResetLevel(string? category = null, string? provider = null)
 		{
 			var path = BuildLogLevelPath(category, provider);
 			Data.Remove(path);
@@ -56,15 +56,15 @@ namespace Thinktecture.Extensions.Configuration
 			return Enum.GetName(typeof(LogLevel), level);
 		}
 
-		private string BuildLogLevelPath(string category, string provider)
+		private string BuildLogLevelPath(string? category, string? provider)
 		{
 			var segments = _parentPath.ToList();
 
 			if (!String.IsNullOrWhiteSpace(provider))
-				segments.Add(provider.Trim());
+				segments.Add(provider!.Trim());
 
 			segments.Add("LogLevel");
-			segments.Add(String.IsNullOrWhiteSpace(category) ? "Default" : category.Trim());
+			segments.Add(String.IsNullOrWhiteSpace(category) ? "Default" : category!.Trim());
 			return ConfigurationPath.Combine(segments);
 		}
 	}

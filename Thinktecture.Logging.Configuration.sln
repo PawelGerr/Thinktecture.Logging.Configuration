@@ -8,13 +8,22 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7760FB9C-2BB6-4F16-9254-497804E28BEA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{ECB38C6A-34B3-4D67-A144-396151CA93F7}"
+ProjectSection(SolutionItems) = preProject
+	example\Directory.Build.props = example\Directory.Build.props
+EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FC041D8C-9C5C-4664-8443-6F51C446742A}"
+ProjectSection(SolutionItems) = preProject
+	test\Directory.Build.props = test\Directory.Build.props
+EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{83ACE7F8-BC91-468A-9E79-CD111FE1FC57}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{83ACE7F8-BC91-468A-9E79-CD111FE1FC57}"
 	ProjectSection(SolutionItems) = preProject
-		LICENCE.md = LICENCE.md
 		README.md = README.md
+		Directory.Build.props = Directory.Build.props
+		.appveyor.yml = .appveyor.yml
+		icon.png = icon.png
+		LICENSE.md = LICENSE.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thinktecture.Extensions.Logging.Configuration.Example", "example\Thinktecture.Extensions.Logging.Configuration.Example\Thinktecture.Extensions.Logging.Configuration.Example.csproj", "{0857DEF7-7CC1-4CAC-9105-4F88D9C4CC61}"

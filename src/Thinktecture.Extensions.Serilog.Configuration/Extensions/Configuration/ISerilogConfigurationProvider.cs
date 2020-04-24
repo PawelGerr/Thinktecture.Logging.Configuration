@@ -12,13 +12,13 @@ namespace Thinktecture.Extensions.Configuration
 		/// </summary>
 		/// <param name="level">Log level.</param>
 		/// <param name="category">Logging category.</param>
-		void SetLevel(LogEventLevel level, string category = null);
+		void SetLevel(LogEventLevel level, string? category = null);
 
 		/// <summary>
 		/// Resets the log level for provided <paramref name="category"/>.
 		/// </summary>
 		/// <param name="category">Logging category.</param>
-		void ResetLevel(string category = null);
+		void ResetLevel(string? category = null);
 
 		/// <summary>
 		/// Removed all previously made settings.

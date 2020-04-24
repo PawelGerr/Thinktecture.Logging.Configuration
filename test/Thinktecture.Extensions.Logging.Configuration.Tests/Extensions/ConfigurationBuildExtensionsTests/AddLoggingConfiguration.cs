@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 using FluentAssertions;
 using Microsoft.Extensions.Configuration;
 using Moq;
@@ -23,21 +21,21 @@ namespace Thinktecture.Extensions.ConfigurationBuildExtensionsTests
 		[Fact]
 		public void Should_throw_if_builder_is_null()
 		{
-			Action action = () => ((IConfigurationBuilder)null).AddLoggingConfiguration(_collectionMock.Object);
+			Action action = () => ((IConfigurationBuilder)null!).AddLoggingConfiguration(_collectionMock.Object);
 			action.Should().Throw<ArgumentNullException>();
 		}
 
 		[Fact]
 		public void Should_throw_if_collection_is_null()
 		{
-			Action action = () => _builderMock.Object.AddLoggingConfiguration(null);
+			Action action = () => _builderMock.Object.AddLoggingConfiguration(null!);
 			action.Should().Throw<ArgumentNullException>();
 		}
 
 		[Fact]
 		public void Should_add_loggingconfigurationsource()
 		{
-			IConfigurationSource createSource = null;
+			IConfigurationSource? createSource = null;
 			_builderMock.Setup(b => b.Add(It.IsAny<IConfigurationSource>()))
 						.Callback<IConfigurationSource>(source => createSource = source)
 						.Returns(_builderMock.Object);

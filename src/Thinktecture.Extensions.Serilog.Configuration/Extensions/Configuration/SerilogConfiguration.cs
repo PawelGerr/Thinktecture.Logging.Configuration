@@ -21,7 +21,7 @@ namespace Thinktecture.Extensions.Configuration
 		}
 
 		/// <inheritdoc />
-		public void SetLevel(LogEventLevel level, string category = null)
+		public void SetLevel(LogEventLevel level, string? category = null)
 		{
 			foreach (var p in _providers)
 			{
@@ -30,7 +30,7 @@ namespace Thinktecture.Extensions.Configuration
 		}
 
 		/// <inheritdoc />
-		public void ResetLevel(string category = null)
+		public void ResetLevel(string? category = null)
 		{
 			foreach (var p in _providers)
 			{

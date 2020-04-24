@@ -9,14 +9,14 @@ namespace Thinktecture.Extensions.Configuration.LoggingConfigurationProviderTest
 		[Fact]
 		public void Should_throw_if_pathcollection_is_null()
 		{
-			Action action = () => new LoggingConfigurationProvider(null);
+			Action action = () => new LoggingConfigurationProvider(null!);
 			action.Should().Throw<ArgumentNullException>();
 		}
 
 		[Fact]
 		public void Should_throw_if_pathcollection_contains_null()
 		{
-			Action action = () => new LoggingConfigurationProvider(new string[] { null });
+			Action action = () => new LoggingConfigurationProvider(new string[] { null! });
 			action.Should().Throw<ArgumentException>();
 		}
 

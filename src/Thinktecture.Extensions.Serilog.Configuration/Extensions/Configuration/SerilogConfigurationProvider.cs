@@ -26,7 +26,7 @@ namespace Thinktecture.Extensions.Configuration
 		}
 
 		/// <inheritdoc />
-		public void SetLevel(LogEventLevel level, string category = null)
+		public void SetLevel(LogEventLevel level, string? category = null)
 		{
 			var path = BuildLogLevelPath(category, out var additionalPath);
 			Data[path] = GetLevelName(level);
@@ -38,7 +38,7 @@ namespace Thinktecture.Extensions.Configuration
 		}
 
 		/// <inheritdoc />
-		public void ResetLevel(string category = null)
+		public void ResetLevel(string? category = null)
 		{
 			var path = BuildLogLevelPath(category, out var additionalPath);
 			Data.Remove(path);
@@ -64,7 +64,7 @@ namespace Thinktecture.Extensions.Configuration
 			return Enum.GetName(typeof(LogEventLevel), level);
 		}
 
-		private string BuildLogLevelPath(string category, out string additionalPath)
+		private string BuildLogLevelPath(string? category, out string? additionalPath)
 		{
 			var segments = _parentPath.ToList();
 			segments.Add("MinimumLevel");
@@ -72,7 +72,7 @@ namespace Thinktecture.Extensions.Configuration
 			if (!String.IsNullOrWhiteSpace(category))
 			{
 				segments.Add("Override");
-				segments.Add(category.Trim());
+				segments.Add(category!.Trim());
 				additionalPath = null;
 			}
 			else

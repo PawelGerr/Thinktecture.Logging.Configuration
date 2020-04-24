@@ -9,14 +9,14 @@ namespace Thinktecture.Extensions.Configuration.SerilogConfigurationProviderTest
 		[Fact]
 		public void Should_throw_if_pathcollection_is_null()
 		{
-			Action action = () => new SerilogConfigurationProvider(null);
+			Action action = () => new SerilogConfigurationProvider(null!);
 			action.Should().Throw<ArgumentNullException>();
 		}
 
 		[Fact]
 		public void Should_throw_if_pathcollection_contains_null()
 		{
-			Action action = () => new SerilogConfigurationProvider(new string[] { null });
+			Action action = () => new SerilogConfigurationProvider(new string[] { null! });
 			action.Should().Throw<ArgumentException>();
 		}
 
