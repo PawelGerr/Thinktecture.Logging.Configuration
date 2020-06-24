@@ -75,7 +75,7 @@ loggingConfig.SetLevel(LogLevel.Error, null, "Console");
 loggingConfig.SetLevel(LogLevel.Critical, "Thinktecture", "Console");
 
 // Resetting all settings, returning to defaults
-loggingConfig.ResetAll();
+loggingConfig.ResetLevel();
 ```
 
 ### With *Serilog*
@@ -136,5 +136,5 @@ serilogConfig.SetLevel(LogEventLevel.Information);
 serilogConfig.SetLevel(LogEventLevel.Debug, "Thinktecture");
 
 Resetting all settings, returning to defaults
-serilogConfig.ResetAll();
+serilogConfig.ResetLevel();
 ```
